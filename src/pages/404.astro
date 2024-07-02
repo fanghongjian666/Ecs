@@ -1,0 +1,30 @@
+---
+import Container from "@components/container.astro";
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout title="404 Not Found">
+  <Container>
+
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>背景图片示例</title>
+      <style>
+        body {
+          background-image: url('public/背景.png'); /* 设置背景图片 */
+          background-size: cover; /* 背景图片覆盖整个页面 */
+          background-repeat: no-repeat; /* 不重复背景图片 */
+          background-position: center; /* 背景图片居中 */
+        }
+      </style>
+    </head>
+    <body>
+    <div class="min-h-[calc(100vh-16rem)] flex items-center justify-center">
+      <div class="mt-16 text-center">
+        <h1 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">        <a href="https://buff.163.com/">网易BUFF</a></h1>
+        <a href="https://buff.163.com/"></a>
+      </div>
+    </div>
+  </Container>
+</Layout>

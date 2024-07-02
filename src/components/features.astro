@@ -1,0 +1,91 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon/components";
+
+const features = [
+  {
+  title:"瞄准·成为真正的爆头机器",
+    description:
+      "精确而可靠的瞄准离不开一套持续高效的训练方法。通过Ecs的的提前枪模式、交叉火力模式、敌潮模式以及许多其他训练模式来释放你的瞄准潜力并始终保持高水平。从预瞄、急停到模拟真实比赛场景，帮助你在各方面都获得提升。",
+    icon: "bx:bxs-briefcase",
+    video:"https://refrag.gg/images/aim-gif.webm"
+  },
+  {
+    title: "道具·从此道具不再丢歪",
+    description:
+      "预置了上百种道具方案的Blog使得学习各个地图上的道具变得轻而易举。在比赛中看到了有用的道具？在Blog中你最多可以保存500组你自己的道具方案，并且每次进入Ecs就可以使用。",
+    icon: "bx:bxs-window-alt",
+    video:"https://refrag.gg/images/utility-gif.webm"
+  },
+  {
+    title: "战术·永远快人一步",
+    description:
+      "从我们的训练视频中学习职业选手们的战术，然后在游戏中通过我们针对这些战术定制的训练脚本练习使用它们。还在某张地图的某个点位坐牢？或是对某一战术感到束手无策？创造工坊允许你构建具体的场景供你和你的队伍练习。  ",
+    icon: "bx:bxs-data",
+    video:"https://refrag.gg/images/strategy-gif.webm"
+  },
+];
+---
+<style>
+  .feature {
+    display: flex;
+    align-items: center;
+    margin-bottom: 7em;
+  }
+  .feature:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+  .feature-text {
+    flex: 1;
+    padding: 1rem;
+  }
+  .feature-text h2{font-size:3rem;margin-bottom:1rem}
+  .feature-text p{font-size:1.25rem}
+  .feature-video {
+    flex: 1;
+    padding: 1rem;
+  }
+</style>
+
+<main>
+  {features.map((feature) => (
+    <div class="feature">
+      <div class="feature-text">
+        <h2>{feature.title}</h2>
+        <p>{feature.description}</p >
+      </div>
+      <div class="feature-video">
+        <video autoplay loop width="600" height="400">
+          <source src={feature.video} type="video/mp4">
+          您的浏览器不支持视频标签。
+        </video>
+      </div>
+    </div>
+  ))}
+</main>
+
+<div class="mt-16 md:mt-0">
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+    功能
+  </h2>
+  <p class="text-lg mt-4 text-slate-600">
+    释放我们多功能训练选项的能量
+在下面了解所有可用模式并提升您的体验。
+  </p>
+</div>
+
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+  {
+    features.map((item) => (
+      <div class="flex gap-4 items-start">
+        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
+          <Icon class="text-white" name={item.icon} />
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>

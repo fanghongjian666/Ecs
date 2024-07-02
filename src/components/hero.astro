@@ -1,0 +1,58 @@
+---
+import { Picture } from "astro:assets";
+import heroImage from "assets/hero.png";
+import Link from "@components/ui/link.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<main
+  class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
+  <div class="py-6 md:order-1 hidden md:block">
+    <Picture
+      src={heroImage}
+      alt="Astronaut in the air"
+      widths={[200, 400, 600]}
+      sizes="(max-width: 800px) 100vw, 620px"
+      loading="eager"
+      format="avif"
+    />
+  </div>
+  <div>
+    <h1 class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
+      <span class="text-gradient">升级</span><br />
+      <span>你的CS2训练</span>
+    </h1>
+    <p class="text-lg mt-4 text-slate-600 max-w-xl">
+      Ecs是一款被证明可以提高你在CS2中的瞄准、道具和战术水平的专业学习网站。
+    </p >
+    <div class="mt-6 flex flex-col sm:flex-row gap-3">
+      <Link
+        href="#"
+        href="https://store.steampowered.com/"
+        target="_blank"
+        class="flex gap-1 items-center justify-center"
+        rel="noopener">
+        <Icon class="text-white w-5 h-5" name="bx:bxs-cloud-download" />
+        下载CS2
+      </Link>
+      <Link
+        size="lg"
+        style="outline"
+        rel="noopener"
+        href="https://store.steampowered.com/app/730/CounterStrike_2/"
+        class="flex gap-1 items-center justify-center"
+        target="_blank">
+        <Icon class="text-black w-4 h-4" name="bx:bxl-github" />
+        了解Ecs
+      </Link>
+    </div>
+  </div>
+</main>
+
+<style>
+  .text-gradient {
+    background: linear-gradient(to right, #d6a4a4, #d5b0d4); /* 淡紫色渐变 */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+</style>

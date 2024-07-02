@@ -1,0 +1,81 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import PricingCard from "@components/pricing.astro";
+
+const pricing = [
+  {
+    name: "个人",
+    price: "免费",
+    popular: false,
+    features: [
+      "交叉火力模式",
+      "育苗清点模式",
+      "Blog道具训练",
+      "压枪训练",
+      "创造工坊",
+      "训练营"
+
+    ],
+    button: {
+      text: "购买",
+      link: "/",
+    },
+  },
+  {
+    name: "小队",
+    price: {
+      monthly: "9.9RMB",
+      annual: "$16",
+      discount: "10%",
+      original: "$24",
+    },
+    popular: true,
+    features: [
+      "一切免费",
+      "最高20位用户",
+      "2D Demo查看",
+      "详细的瞄准数据",
+      "Rountimes",
+      "以及更多"
+    ],
+    button: {
+      text: "购买",
+      link: "#",
+    },
+  },
+  {
+    name: "竞争者",
+    price: "8.8RMB",
+    popular: false,
+    features: [
+      "团队访问权限",
+      "7个席位",
+      "7个独立服务器",
+      "道具中心",
+      "训练赛模式",
+      "24/7 客服支持",
+    ],
+    button: {
+      text: "联系购买",
+      link: "/contact",
+    },
+  },
+];
+---
+
+<Layout title="Pricing">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">价格</Fragment>
+      <Fragment slot="desc">
+        选择适合你的套餐
+      </Fragment>
+    </Sectionhead>
+
+    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
+      {pricing.map((item) => <PricingCard plan={item} />)}
+    </div>
+  </Container>
+</Layout>
